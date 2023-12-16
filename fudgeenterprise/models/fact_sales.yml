@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Transaction fact table. One row per line item ordered. 
+    columns:
+      - name: orderid
+        description: source key used for drill through
+      - name: customerkey
+        description: Dimension FK for dim_customer
+      - name: orderdatekey
+        description: Dimension FK for dim_date
+      - name: productkey
+        description: Dimension FK for dim_product
+      - name: quantity
+        description: the quantity of the product on the order. Additive
+      - name: soldamount
+        description: additive fact for quantity * retail price
+      - name: productname
+        description: product name
+      - name: productdepartment
+        description: product department name
+

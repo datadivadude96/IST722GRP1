@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: fact_finance
+    description: Transaction fact table. One row per line total finance. 
+    columns:
+      - name: orderid
+        description: source key used for drill through
+      - name: customerkey
+        description: Dimension FK for dim_customer
+      - name: orderdatekey
+        description: Dimension FK for dim_date
+      - name: productkey
+        description: Dimension FK for dim_product
+      - name: quantity
+        description: the quantity of the product on the order. Additive
+      - name: soldamount
+        description: additive fact for quantity * retail price
+      - name: productname
+        description: product name
+      - name: productdepartment
+        description: product department name
+      - name: accountkey
+        description: The surrogate key of the account
+      - name: account_id
+        description: The business / source key of the account
+      - name: datekey 
+        description: The surrogate key of the date YYYYMMDD
+      - name: date
+        description: The date of the date key
+      - name: plankey
+        description: The surrogate key of the plan
+      - name: plan_id
+        description: The business / source key of the plan
+ 

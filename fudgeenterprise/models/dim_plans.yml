@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_plans
+    description: Fudgeflix plans. One row per plan
+    columns:
+      - name: plankey
+        description: The surrogate key of the plan
+        tests:
+          - not_null
+          - unique
+      - name: plan_id
+        description: The business / source key of the plan
+        tests:
+          - not_null
+          - unique

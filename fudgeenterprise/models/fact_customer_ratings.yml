@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: fact_customer_ratings
+    description: "One row represents a customer's rating for the title."
+    columns:
+      - name: accountkey
+        description: "Dimension foreign key for dim_account."
+        data_type: integer
+
+      - name: titlekey
+        description: "Dimension foreign key for dim_titles."
+        data_type: integer
+
+      - name: rating
+        description: "Customer rating for the title."
+        data_type: integer
+
+      - name: titlename
+        description: "Title name (degenerate dimension)."
+        data_type: string
+
+      - name: titletype
+        description: "Title type (degenerate dimension)."
+        data_type: string
+
+      - name: titleavgrating
+        description: "Average rating of the title."
+        data_type: integer
+
+      - name: genrename
+        description: "Genre name or type."
+        data_type: string
+
+

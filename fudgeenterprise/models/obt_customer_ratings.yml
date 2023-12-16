@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: obt_customer_ratings
+    description: The customer review fact table combined with all of its outrigger dimensions into one bit table. factless fact table with one row per item rated.
