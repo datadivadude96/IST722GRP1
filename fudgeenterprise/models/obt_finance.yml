@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: obt_finance
+    description: The combined finance fact table  of fudgemart and fudgeflix combined with all of its outrigger dimensions into one bit table.

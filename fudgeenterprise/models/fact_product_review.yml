@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fact_product_review
+    description: product review level fact table. one row represents customer ratings on product 
+    columns:
+      - name: productkey
+        description: Degenerate dimension for of the product.
+      - name: customerkey
+        description: Dimension key for dim_customer
+      - name: productadddatekey
+        description: Dimension FK for dim_date
+      - name: reviewdate
+        description: Dimension FK for dim_date
+      - name: productname
+        description: product name (degenerate dimension)
+      - name: productdepartment
+        description: department of the product sold ( degenerate dimension)
+      - name: favoritedepartment
+        description: favorite department choosen by customer in survey
+      - name: email
+        description: customer email id (degenerate dimension)

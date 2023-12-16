@@ -89,3 +89,7 @@ sources:
       - name: ff_account_billing
         columns:
           - name: at_id
+      - name: ff_title_genres
+        columns:
+          - name: tg_title_id
+          - name: tg_genre_name

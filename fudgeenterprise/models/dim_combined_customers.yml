@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_combined_customers
+    description: Combined Customer Dimension from Fudgemart and Fudgeflix
+    columns:
+      - name: customerkey
+        description: The surrogate key of the customer
+        tests:
+          - not_null
+          - unique
+      - name: source_system
+        description: Indicates the source system ('fudgemart' or 'fudgeflix')
+        tests:
+          - not_null
+      - name: customer_id
+        description: The business / source key of the customer
+        tests:
+          - not_null
+          - unique

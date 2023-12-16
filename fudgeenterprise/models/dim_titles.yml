@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_titles
+    description: Fudgeflix titles. One row per title
+    columns:
+      - name: titlekey
+        description: The surrogate key of the title
+        tests:
+          - not_null
+          - unique
+      - name: title_id
+        description: The business / source key of the title
+        tests:
+          - not_null
+          - unique
