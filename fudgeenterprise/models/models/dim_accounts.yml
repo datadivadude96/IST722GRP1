@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_accounts
+    description: Account Dimension. One row per customeaccount
+    columns:
+      - name: accountkey
+        description: The surrogate key of the account
+        tests:
+          - not_null
+          - unique
+      - name: account_id
+        description: The business / source key of the account
+        tests:
+          - not_null
+          - unique

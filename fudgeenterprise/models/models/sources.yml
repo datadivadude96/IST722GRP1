@@ -1,0 +1,91 @@
+version: 2
+
+sources:
+  - name: conformed
+    database: raw
+    schema: conformed
+
+    tables:
+      - name: DateDimension
+        columns:
+          - name: DateKey
+            tests:
+              - unique
+
+  - name: fudgemart
+    database: raw
+    schema: fudgemart
+
+    tables:
+      - name: fm_customers
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+      - name: fm_products
+        columns:
+          - name: product_id
+            tests:
+              - unique
+      - name: fm_orders
+        columns:
+          - name: order_id
+            tests:
+              - unique
+      - name: fm_order_details
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - order_id
+                - product_id
+      - name: fm_customer_product_reviews
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - customer_id
+                - product_id
+      - name: fm_departments_lookup
+        columns:
+          - name: department_id
+            tests:
+              - unique
+
+      - name: fm_jobtitles_lookup
+        columns:
+          - name: jobtitle_id
+            tests:
+              - unique
+
+      - name: fudgemart_customer_survey
+        columns:
+          - name: Email
+            tests:
+              - unique
+
+  - name: fudgeflix
+    database: raw
+    schema: fudgeflix
+
+    tables:
+      - name: ff_accounts
+        columns:
+          - name: account_id
+            tests:
+              - unique
+      - name: ff_account_titles
+        columns:
+          - name: at_id
+
+      - name: ff_plans
+        columns:
+          - name: plan_id
+            tests:
+              - unique
+      - name: ff_titles
+        columns:
+          - name: title_id
+            tests:
+              - unique
+      - name: ff_account_billing
+        columns:
+          - name: at_id
